@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// バックエンドでWebルーティングはなし
-Route::get('{any}', function() {
-    return view('layout.app');
-})->where('any', '.*');
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+// バックエンドでWebルーティングはなし
+Route::get('{any}', function() {
+    return view('layouts.app');
+})->where('any', '.*');
 
 Auth::routes();
 
